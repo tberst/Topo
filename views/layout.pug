@@ -1,0 +1,25 @@
+doctype html
+html(lang='')
+  head
+    meta(charset='utf-8')
+    meta(name='theme-color' content='#000000')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title #{title}
+    script(src="https://kit.fontawesome.com/46d1196a5a.js",crossorigin="anonymous")
+
+    link(rel='stylesheet', href='/vendors/compiled-tailwind.min.css')
+
+  body.text-gray-800.antialiased
+    noscript You need to enable JavaScript to run this app.
+    #root
+      include partials/navbar
+    main
+      div(class="relative md:ml-64 bg-gray-100")
+        block content
+      
+
+    
+    script(src='/js/lib/jquery-3.1.1.min.js')
+    script(src='/js/lib/bootstrap.min.js')
+    script(async defer src="https://buttons.github.io/buttons.js")
+    script(src='/js/main.js')

@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    div(class="relative bg-grey-600 md:pt-16 pb-16 pt-12")
+    div(class="px-4 md:px-10 mx-auto w-full -m-24")
+        .flex.flex-wrap.mt-4
+            div(class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4")
+                .flex.flex-wrap 
+                    //- card
+                    each place,index in data
+                      - var href= "window.location.href='/topo/" + place.id + "';"
+                      div(class="w-full lg:w-6/12 xl:w-4/12 px-4 cursor-pointer",onclick=href)
+                        div(class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg")
+                          div.flex-auto.p-4
+                            .flex.flex-wrap
+                              div.relative.w-full.pr-4.max-w-full.flex-grow.flex-1
+                                h5.text-gray-500.uppercase.font-bold.text-xs= place.type
+                                span.font-semibold.text-xl.text-gray-800= place.title
+                              .relative.w-auto.pl-4.flex-initial
+                                .text-white.p-3.text-center.inline-flex.items-center.justify-center.w-12.h-12.shadow-lg.rounded-full.bg-red-500
+                                  i.far.fa-chart-bar
+                            //- p.text-sm.text-gray-500.mt-4
+                            //-   span.text-green-500.mr-2
+                            //-     i.fas.fa-arrow-up 3.48%
+                            //-   span.whitespace-no-wrap Since last month                    
