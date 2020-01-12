@@ -2,6 +2,8 @@ import { Request, Response, NextFunction } from "express";
 import { Places, PlaceDocument, Track } from "../models/Place";
 import { ObjectID, WriteError } from "mongodb";
 import { TrackRuns, TrackRunDocument } from "../models/TrackRun";
+import * as SampleData from "../models/data.json";
+
 /**
  * GET /
  * Home page.
@@ -147,26 +149,7 @@ export const deleteRouteInstance = (req: Request, res: Response, next: NextFunct
 };
 
 export const postSampleData = (req: Request, res: Response) => {
-    const wascalade: PlaceDocument = new Places(
-        {
-            "title": "wascalade",
-            "tracks": [
-                {
-                    "title": "vache"
-                    , "difficulty": "6b",
-                    "number": 14,
-                    "height": 8
-                }, {
-                    "title": "1 rouge"
-                    , "difficulty": "6b",
-                    "number": 1,
-                    "height": 8
-                }
-            ],
-            "type": "salle",
-            "height": 8
-        }
-    );
+    const wascalade: PlaceDocument = new Places(SampleData);
     wascalade.save(() => { res.sendStatus(200); });
 
 
