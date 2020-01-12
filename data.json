@@ -1,0 +1,379 @@
+{
+    "title": "wascalade",
+    "tracks": [
+        {
+            "title": "Bleu",
+            "difficulty": "5a",
+            "number": 1,
+            "height": 8
+        },
+        {
+            "title": "Rouge",
+            "difficulty": "5c",
+            "number": 1,
+            "height": 8
+        },
+        {
+            "title": "Vert",
+            "difficulty": "6b",
+            "number": 1,
+            "height": 8
+        },
+        {
+            "title": "Turquoise",
+            "difficulty": "6b",
+            "number": 1,
+            "height": 8
+        },
+        {
+            "title": "Noire",
+            "difficulty": "5b",
+            "number": 2,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "6a",
+            "number": 2,
+            "height": 8
+        },
+        {
+            "title": "Verte",
+            "difficulty": "5a",
+            "number": 2,
+            "height": 8
+        },
+        {
+            "title": "Orange",
+            "difficulty": "5b",
+            "number": 3,
+            "height": 8
+        },
+        {
+            "title": "Rose",
+            "difficulty": "5b+",
+            "number": 3,
+            "height": 8
+        },
+        {
+            "title": "Rouge",
+            "difficulty": "6a",
+            "number": 3,
+            "height": 8
+        },
+        {
+            "title": "Grise",
+            "difficulty": "5b",
+            "number": 4,
+            "height": 8
+        },
+        {
+            "title": "Bleue",
+            "difficulty": "6a",
+            "number": 4,
+            "height": 8
+        },
+        {
+            "title": "Noire",
+            "difficulty": "6a",
+            "number": 4,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "6a",
+            "number": 4,
+            "height": 8
+        },
+        {
+            "title": "Verte",
+            "difficulty": "5b",
+            "number": 5,
+            "height": 8
+        },
+        {
+            "title": "Rouge",
+            "difficulty": "5c",
+            "number": 5,
+            "height": 8
+        },
+        {
+            "title": "Corail",
+            "difficulty": "6b",
+            "number": 5,
+            "height": 8
+        },
+        {
+            "title": "Rose",
+            "difficulty": "6a",
+            "number": 6,
+            "height": 8
+        },
+        {
+            "title": "Noire",
+            "difficulty": "6b",
+            "number": 6,
+            "height": 8
+        },
+        {
+            "title": "Bleue",
+            "difficulty": "6b",
+            "number": 6,
+            "height": 8
+        },
+        {
+            "title": "Rouge",
+            "difficulty": "5a",
+            "number": 7,
+            "height": 8
+        },
+        {
+            "title": "Grise",
+            "difficulty": "5b",
+            "number": 7,
+            "height": 8
+        },
+        {
+            "title": "Violette",
+            "difficulty": "6a",
+            "number":7,
+            "height": 8
+        },
+        {
+            "title": "Bleue",
+            "difficulty": "5b",
+            "number": 8,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "7a",
+            "number": 8,
+            "height": 8
+        },
+        {
+            "title": "Beige",
+            "difficulty": "5c",
+            "number": 9,
+            "height": 8
+        },
+        {
+            "title": "Orange",
+            "difficulty": "6b",
+            "number": 9,
+            "height": 8
+        },
+        {
+            "title": "Noire",
+            "difficulty": "6c",
+            "number": 9,
+            "height": 8
+        },
+        {
+            "title": "Verte",
+            "difficulty": "6a",
+            "number": 10,
+            "height": 8
+        },
+        {
+            "title": "Vache",
+            "difficulty": "6b",
+            "number": 10,
+            "height": 8
+        },
+        {
+            "title": "Grise",
+            "difficulty": "7b",
+            "number": 10,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "5b",
+            "number": 11,
+            "height": 8
+        },
+        {
+            "title": "Violette",
+            "difficulty": "6a",
+            "number": 11,
+            "height": 8
+        },
+        {
+            "title": "Rose",
+            "difficulty": "5a+",
+            "number": 12,
+            "height": 8
+        },
+        {
+            "title": "Orange",
+            "difficulty": "5c",
+            "number": 12,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "6a",
+            "number": 12,
+            "height": 8
+        },
+        {
+            "title": "Orange",
+            "difficulty": "5c",
+            "number": 13,
+            "height": 8
+        },
+        {
+            "title": "Corail",
+            "difficulty": "6a",
+            "number": 13,
+            "height": 8
+        },
+        {
+            "title": "Rouge",
+            "difficulty": "6b",
+            "number": 13,
+            "height": 8
+        },
+        {
+            "title": "Vert",
+            "difficulty": "5c",
+            "number": 14,
+            "height": 8
+        },
+        {
+            "title": "Noire",
+            "difficulty": "5c",
+            "number": 14,
+            "height": 8
+        },
+        {
+            "title": "Violette",
+            "difficulty": "5c",
+            "number": 14,
+            "height": 8
+        },
+        {
+            "title": "Grise",
+            "difficulty": "6a",
+            "number": 14,
+            "height": 8
+        },
+        {
+            "title": "Bleue",
+            "difficulty": "5a+",
+            "number": 15,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "5b+",
+            "number": 15,
+            "height": 8
+        },
+        {
+            "title": "Beige",
+            "difficulty": "5b",
+            "number": 15,
+            "height": 8
+        },
+        {
+            "title": "Vert",
+            "difficulty": "4c",
+            "number": 16,
+            "height": 8
+        },
+        {
+            "title": "Noire",
+            "difficulty": "5a",
+            "number": 16,
+            "height": 8
+        },
+        {
+            "title": "Rose",
+            "difficulty": "4a",
+            "number": 17,
+            "height": 8
+        },
+        {
+            "title": "Rouge",
+            "difficulty": "4c",
+            "number": 17,
+            "height": 8
+        },
+        {
+            "title": "Violette",
+            "difficulty": "5c",
+            "number": 17,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "5c",
+            "number": 17,
+            "height": 8
+        },
+        {
+            "title": "Beige",
+            "difficulty": "4b",
+            "number": 18,
+            "height": 8
+        },
+        {
+            "title": "Noire",
+            "difficulty": "5c",
+            "number": 18,
+            "height": 8
+        },
+        {
+            "title": "Turquoise",
+            "difficulty": "6a",
+            "number": 18,
+            "height": 8
+        },
+        {
+            "title": "Jaune",
+            "difficulty": "5a",
+            "number": 19,
+            "height": 8
+        },
+        {
+            "title": "Rouge",
+            "difficulty": "5b",
+            "number": 19,
+            "height": 8
+        },
+        {
+            "title": "Verte",
+            "difficulty": "5c",
+            "number": 19,
+            "height": 8
+        },
+        {
+            "title": "Orange",
+            "difficulty": "5a",
+            "number": 20,
+            "height": 8
+        },
+        {
+            "title": "Beige",
+            "difficulty": "5c",
+            "number": 20,
+            "height": 8
+        },
+        {
+            "title": "Violette",
+            "difficulty": "6a",
+            "number": 20,
+            "height": 8
+        },
+        {
+            "title": "Bleue",
+            "difficulty": "6b",
+            "number": 20,
+            "height": 8
+        }
+    ],
+    "type": "salle",
+    "height": 8
+}
