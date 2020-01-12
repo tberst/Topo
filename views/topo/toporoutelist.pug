@@ -1,0 +1,68 @@
+extends ../layout
+
+block content
+    //- header
+    div(class="relative bg-pink-600 md:pt-16 pb-16 pt-12")
+        div(class="px-4 md:px-10 mx-auto w-full")
+            div
+            //- card
+            .flex.flex-wrap 
+              div(class="w-full xl:w-8/12 px-4")
+                div(class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg")
+                  div.flex-auto.p-4
+                    .flex.flex-wrap
+                      div.relative.w-full.pr-4.max-w-full.flex-grow.flex-1
+                        h5.text-gray-500.uppercase.font-bold.text-xs= data.type
+                        span.font-semibold.text-xl.text-gray-800= data.title
+                      .relative.w-auto.pl-4.flex-initial
+                        .text-white.p-3.text-center.inline-flex.items-center.justify-center.w-12.h-12.shadow-lg.rounded-full.bg-red-500
+                          i.far.fa-chart-bar
+                    p.text-sm.text-gray-500.mt-4
+                        ul(class="flex flex-wrap list-none")
+                            li
+                                span(class="text-gray-700 text-sm font-semibold block py-1 px-3") #{data.height} mètres
+                            li
+                                span(class="text-gray-700 text-sm font-semibold block py-1 px-3") #{data.tracks.length} voies
+    //- main
+    div(class="px-4 md:px-10 mx-auto w-full -m-16")
+        .flex.flex-wrap.mt-4
+            div(class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4")
+                .relative.flex.flex-col.min-w-0.break-words.bg-white.w-full.mb-6.shadow-lg.rounded
+                    .rounded-t.mb-0.px-4.py-3.border-0
+                        .flex.flex-wrap.items-center
+                            .relative.w-full.px-4.max-w-full.flex-grow.flex-1
+                                h3.font-semibold.text-base.text-gray-800 Voies
+                            //- .relative.w-full.px-4.max-w-full.flex-grow.flex-1.text-right
+                            //-     button(class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1",type="button",style="transition:all .15s ease") see all
+                    //- table
+                    table.items-center.w-full.bg-transparent.border-collapse
+                        thead
+                            tr
+                                th.px-6.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
+                                    | Num.
+                                th.px-2.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
+                                    | Nom
+                                th.px-2.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
+                                    | Difficulté
+                                th.px-2.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
+                                    | Score
+                                th.px-2.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
+                        tbody
+                            each track in data.tracks  
+                                tr
+                                    td.border-t-0.px-6.align-middle.border-l-0.border-r-0.text-xs.whitespace-no-wrap.p-4= track.number
+                                    td.border-t-0.px-2.align-middle.border-l-0.border-r-0.text-xs.whitespace-no-wrap.p-4= track.title
+                                    td.border-t-0.px-2.align-middle.border-l-0.border-r-0.text-xs.whitespace-no-wrap.p-4= track.difficulty
+                                    td.border-t-0.px-2.align-middle.border-l-0.border-r-0.text-xs.whitespace-no-wrap.p-4
+                                        - var i = 0;
+                                        while i<maxes[track.id]
+                                            - i++
+                                            i.fas.fa-star
+                                        - var i = 4;
+                                        while i>=maxes[track.id]
+                                            - i--
+                                            i.far.fa-star
+                                    td.border-t-0.px-2.align-middle.border-l-0.border-r-0.text-xs.whitespace-no-wrap.p-4
+                                        - var href = "window.location.href='/topo/"+data.id+"/" +track.id + "';"
+                                        button(class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none  mr-1",type="button",style="transition:all .15s ease",onclick=href) 
+                                            i.fas.fa-tv

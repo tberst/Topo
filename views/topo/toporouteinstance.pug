@@ -1,0 +1,67 @@
+extends ../layout
+
+block content
+    //- header
+    div(class="relative bg-pink-600 md:pt-16 pb-16 pt-12")
+        div(class="px-4 md:px-10 mx-auto w-full")
+            div
+            //- card
+            .flex.flex-wrap 
+              div(class="w-full xl:w-4/12 px-4")
+                div(class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg")
+                  div.flex-auto.p-4
+                    .flex.flex-wrap
+                      div.relative.w-full.pr-4.max-w-full.flex-grow.flex-1
+                        h5.text-gray-500.uppercase.font-bold.text-xs= place.title
+                        span.font-semibold.text-xl.text-gray-800 Voie N°#{track.number} - #{track.title}
+                    //-   .relative.w-auto.pl-4.flex-initial
+                    //-     .text-white.p-3.text-center.inline-flex.items-center.justify-center.w-12.h-12
+                    //-       button(class="bg-indigo-500 text-white active:bg-indigo-600 font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1",type="button",style="transition:all .15s ease")
+                    //-         i.fas.fa-arrow-left                    
+                    p.text-sm.text-gray-500.mt-4
+                        ul(class="flex flex-wrap list-none")
+                            li
+                                span(class="text-gray-700 text-sm font-semibold block py-1 px-3") #{track.height} mètres
+                            li
+                                span(class="text-gray-700 text-sm font-semibold block py-1 px-3") #{track.difficulty}
+    //- main
+    div(class="px-4 md:px-10 mx-auto w-full -m-16")
+        .flex.flex-wrap.mt-4
+            div(class="w-full xl:w-4/12 mb-12 xl:mb-0 px-4")
+                .relative.flex.flex-col.min-w-0.break-words.bg-white.w-full.mb-6.shadow-lg.rounded
+                    div(class="flex-auto p-5 lg:p-10")
+                        .flex.flex-wrap.items-center
+                            .relative.w-full.px-4.max-w-full.flex-grow.flex-1
+                                 h3.font-semibold.text-base.text-gray-800  Ajouter à l'historique
+                            .relative.w-full.px-4.max-w-full.flex-grow.flex-1.text-right
+                                 button(class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1",type="button",style="transition: all 0.15s ease 0s;",onclick="topoRouteInstance.saveRun()")
+                                    i.fa.fa-save
+                        .relative.w-full.mb-3.mt-8
+                            label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="date")
+                                | Date
+                            - var today = new Date().toISOString().split('T')[0]
+                            input(type="date",class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full",placeholder="Full Name",style="transition: all 0.15s ease 0s;",value=today,id="date")
+                        .relative.w-full.mb-3.mt-8
+                            label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="date")
+                                | En tête ?
+                            input(type="checkbox",class="form-checkbox text-gray-800 ml-1 w-5 h-5",style="transition: all 0.15s ease 0s;",value="on",id="head")
+                        .relative.w-full.mb-3.mt-8
+                            label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="score")
+                                | Score
+                            .flex.flex-wrap.text-xs 
+                                select(id="score")
+                                    option(value="1") 
+                                        | 1 étoile
+                                    option(value="2") 
+                                        | 2 étoile
+                                    option(value="3") 
+                                        | 3 étoiles
+                                    option(value="4") 
+                                        | 4 étoiles
+                                    option(selected="true",value="5")
+                                        | 5 étoiles
+                        .relative.w-full.mb-3.mt-8
+                            label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="full-name")
+                                | Commentaire
+                            textarea(rows="4",cols="80",class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full",placeholder="Type a message...",id="comment")
+                        

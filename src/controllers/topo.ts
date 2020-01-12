@@ -8,7 +8,7 @@ import { TrackRuns, TrackRunDocument } from "../models/TrackRun";
  */
 export const index = (req: Request, res: Response) => {
     Places.find().then((places) => {
-        res.render("topo/topoIndex", {
+        res.render("topo/topoindex", {
             title: "Topo-Home",
             data: places
         });
@@ -46,7 +46,7 @@ export const routeList = (req: Request, res: Response) => {
                 }
                
             });
-            res.render("topo/topoRouteList", {
+            res.render("topo/toporoutelist", {
                 "title": "Topo - " + place.title,
                 "data": place,
                 "maxes": maxes
@@ -73,7 +73,7 @@ export const routeDetail = (req: Request, res: Response) => {
             const place = result[0];
             const runs = result[1];
             const track = place.tracks.find((elem) => { return elem.id == trackId; });
-            res.render("topo/topoRouteDetail", {
+            res.render("topo/toporoutedetail", {
                 title: "Topo - Voie",
                 place: place,
                 track: track,
@@ -92,7 +92,7 @@ export const routeInstance = (req: Request, res: Response) => {
     if (placeId && trackId) {
         Places.findById(placeId).then((place) => {
             const track = place.tracks.find((elem) => { return elem.id == trackId; });
-            res.render("topo/topoRouteInstance", {
+            res.render("topo/toporouteinstance", {
                 title: "Topo - Voie",
                 place: place,
                 track: track
