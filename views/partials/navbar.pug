@@ -13,12 +13,23 @@ nav(class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto m
                             i.fas.fa-times
             ul(class="md:flex-col md:min-w-full flex flex-col list-none") 
                 li.items-center
-                    a(class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
-                        ,href="/")
-                        i.fas.fa-tv.opacity-75.mr-2.text-sm      
-                        span Tableau de bord
+                    li.items-center
+                        a(class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
+                            ,href="/")
+                            i.fas.fa-user.opacity-75.mr-2.text-sm      
+                            span= user.email
+                //- li.items-center
+                //-     a(class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
+                //-         ,href="/")
+                //-         i.fas.fa-tv.opacity-75.mr-2.text-sm      
+                //-         span Tableau de bord
                 li.items-center
                     a(class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
                         ,href="/topo")
                         i.fas.fa-newspaper.opacity-75.mr-2.text-sm      
                         span Topo
+                li.items-center
+                    a(class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
+                        ,href="/logout")
+                        i.fas.fa-sign-out-alt.opacity-75.mr-2.text-sm      
+                        span Se déconnecter                        

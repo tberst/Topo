@@ -40,9 +40,11 @@ block content
                             label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="date")
                                 | Date
                             - var today = new Date().toISOString().split('T')[0]
-                            //- - var todayAsText = today.getFullYear() +"-"+(today.getMonth()+1) + "-" + today.getDate()
-
                             input(type="date",class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full",placeholder="Full Name",style="transition: all 0.15s ease 0s;",value=today,id="date")
+                        .relative.w-full.mb-3.mt-8
+                            label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="date")
+                                | En tête ?
+                            input(type="checkbox",class="form-checkbox text-gray-800 ml-1 w-5 h-5",style="transition: all 0.15s ease 0s;",value="on",id="head")
                         .relative.w-full.mb-3.mt-8
                             label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="score")
                                 | Score

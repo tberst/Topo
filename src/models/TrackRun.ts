@@ -7,6 +7,7 @@ export type TrackRunDocument = mongoose.Document & {
     userId: string;
     trackId: string;
     score: number;
+    head: boolean;
     date: Date;
     place: string;
     comment: string;
@@ -21,6 +22,7 @@ const trackRunSchema = new mongoose.Schema({
     userId: String,
     trackId: String,
     score: Number,
+    head: Boolean,
     date: Date,
     place: String,
     comment: String,

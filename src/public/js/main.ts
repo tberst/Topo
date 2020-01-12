@@ -4,10 +4,13 @@ $(document).ready(function () {
     var date = $("#date").val();
     var score = $("#score").val();
     var comment = $("#comment").val();
+    var head = $("#head").prop('checked');
+
     var href = location.href;
     $.post(href, {
       date: date,
       score: score,
+      head: head,
       comment: comment
     }, function (result) {
       window.location.href = result;

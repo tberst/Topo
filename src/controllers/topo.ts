@@ -18,10 +18,11 @@ export const index = (req: Request, res: Response) => {
 
 export const routeList = (req: Request, res: Response) => {
     const placeId = req.params.site;
+    const user = res.locals.user;
     if (placeId) {
         Promise.all([
             Places.findById(placeId).exec(),
-            TrackRuns.find(/*{ user: trackId }*/).exec()
+            TrackRuns.find({ userId: user.id }).exec()
         ]).then(function (result) {
             const place = result[0];
             const runs = result[1];
@@ -36,7 +37,14 @@ export const routeList = (req: Request, res: Response) => {
                     if (elem.id == run.trackId){return run.score;}
                     else{ return 0;}
                 }));
-                maxes[elem.id] = max;
+                if (max > 0 ){
+                    maxes[elem.id] = max;
+                }
+                else
+                {
+                    maxes[elem.id] = 0;
+                }
+               
             });
             res.render("topo/topoRouteList", {
                 "title": "Topo - " + place.title,
@@ -56,10 +64,11 @@ export const routeList = (req: Request, res: Response) => {
 export const routeDetail = (req: Request, res: Response) => {
     const placeId = req.params.site;
     const trackId = req.params.route;
+    const user = res.locals.user;
     if (placeId && trackId) {
         Promise.all([
             Places.findById(placeId).exec(),
-            TrackRuns.find({ trackId: trackId }).exec()
+            TrackRuns.find({ trackId: trackId,userId: user.id }).exec()
         ]).then(function (result) {
             const place = result[0];
             const runs = result[1];
@@ -99,6 +108,7 @@ export const postRouteInstance = (req: Request, res: Response, next: NextFunctio
     const model = req.body as TrackRunDocument;
     const trackId = req.params.route;
     const placeId = req.params.site;
+    const user = res.locals.user;
     const run = new TrackRuns(model);
 
     if (placeId && trackId) {
@@ -108,6 +118,7 @@ export const postRouteInstance = (req: Request, res: Response, next: NextFunctio
             run.track = track;
             run.trackId = track.id;
             run.place = place.title;
+            run.userId = user.id;
             run.save((err: WriteError) => {
                 if (err) { return next(err); }
                 const redirectUrl = "/topo/" + req.params.site + "/" + req.params.route;

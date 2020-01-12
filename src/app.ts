@@ -92,10 +92,10 @@ app.use(
 /**
  * Primary app routes.
  */
-app.get("/", homeController.index);
-// app.get("/login", userController.getLogin);
-// app.post("/login", userController.postLogin);
- app.get("/login", loginController.index);
+app.get("/",passportConfig.isAuthenticated, homeController.index);
+app.get("/login", userController.getLogin);
+app.post("/login", userController.postLogin);
+// app.get("/login", loginController.index);
 app.get("/logout", userController.logout);
 app.get("/forgot", userController.getForgot);
 app.post("/forgot", userController.postForgot);
@@ -110,12 +110,12 @@ app.post("/account/delete", passportConfig.isAuthenticated, userController.postD
 app.get("/account/unlink/:provider", passportConfig.isAuthenticated, userController.getOauthUnlink);
 
 app.get("/sampledata",topoController.postSampleData);
-app.get("/topo",topoController.index);
-app.get("/topo/:site",topoController.routeList);
-app.get("/topo/:site/:route",topoController.routeDetail);
-app.get("/topo/:site/:route/run",topoController.routeInstance);
-app.post("/topo/:site/:route/run",topoController.postRouteInstance);
-app.delete("/topo/:site/:route/:run",topoController.deleteRouteInstance);
+app.get("/topo",passportConfig.isAuthenticated,topoController.index);
+app.get("/topo/:site",passportConfig.isAuthenticated,topoController.routeList);
+app.get("/topo/:site/:route",passportConfig.isAuthenticated,topoController.routeDetail);
+app.get("/topo/:site/:route/run",passportConfig.isAuthenticated,topoController.routeInstance);
+app.post("/topo/:site/:route/run",passportConfig.isAuthenticated,topoController.postRouteInstance);
+app.delete("/topo/:site/:route/:run",passportConfig.isAuthenticated,topoController.deleteRouteInstance);
 
 
 app.get("/api/files/:id",imageController.getImage);

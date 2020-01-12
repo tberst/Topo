@@ -1,31 +1,29 @@
-extends ../layout
+extends ../loginlayout
 
 block content
-  .page-header
-    h3 Sign in
-    hr
-
   form.form-horizontal(method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
-    .form-group.row.justify-content-md-center
-      label.col-sm-3.col-form-label.text-right.font-weight-bold(for='email') Email
-      .col-sm-7
-        input.form-control(type='email', name='email', id='email', placeholder='Email', autofocus, required)
-    .form-group.row.justify-content-md-center
-      label.col-sm-3.col-form-label.text-right.font-weight-bold(for='password') Password
-      .col-sm-7
-        input.form-control(type='password', name='password', id='password', placeholder='Password', required)
-    .form-group.row.justify-content-md-center
-      .offset-sm-3.col-sm-7
-        button.col-sm-3.btn.btn-primary(type='submit')
-          i.fa.fa-user
-          | Login
-        a.btn.btn-link(href='/forgot') Forgot your password?
-    .form-group.row.justify-content-md-center
-      .offset-sm-3.col-sm-7
-        hr
-    .form-group.row.justify-content-md-center
-      .offset-sm-3.col-sm-7
-        a.btn.btn-block.btn-facebook.btn-social(href='/auth/facebook')
-          i.fa.fa-facebook
-          | Sign in with Facebook
+    section.absolute.w-full.h-full
+        div.absolute.top-0.w-full.h-full.bg-gray-900
+        div.container.mx-auto.px-4.h-full
+          div.flex.content-center.items-center.justify-center.h-full
+            div(class="w-full lg:w-4/12 px-4")
+              div.relative.flex.flex-col.min-w-0.break-words.w-full.mb-6.shadow-lg.rounded-lg.bg-gray-300.border-0
+                div(class="flex-auto px-4 lg:px-10 py-10 pt-0")
+                  div.text-gray-500.text-center.mb-3.font-bold
+                    small S'authentifier
+                  form
+                    div.relative.w-full.mb-3
+                        label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="grid-password") Login
+                        input(name='email', id='email',class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", type="text",placeholder="Login",style="transition: all 0.15s ease 0s;")
+                    div.relative.w-full.mb-3
+                        label.block.uppercase.text-gray-700.text-xs.font-bold.mb-2(for="grid-password") Mot de passe
+                        input(name='password', id='password',class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full", type="password",placeholder="Password",style="transition: all 0.15s ease 0s;")
+                    //- div
+                    //-     label.inline-flex.items-center.cursor-pointer
+                    //-         input(id="customCheckLogin", type="checkbox",class="form-checkbox text-gray-800 ml-1 w-5 h-5",style="transition: all 0.15s ease 0s;")
+                    //-         span.ml-2.text-sm.font-semibold.text-gray-700 Se souvenir de moi
+                    div.text-center.mt-6
+                        button(class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full",type="submit",style="transition: all 0.15s ease 0s;") Sign in
+
+

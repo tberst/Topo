@@ -7,7 +7,7 @@ block content
             div
             //- card
             .flex.flex-wrap 
-              div(class="w-full xl:w-4/12 px-4")
+              div(class="w-full xl:w-6/12 px-4")
                 div(class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg")
                   div.flex-auto.p-4
                     .flex.flex-wrap
@@ -27,7 +27,7 @@ block content
     //- main
     div(class="px-4 md:px-10 mx-auto w-full -m-16")
         .flex.flex-wrap.mt-4
-            div(class="w-full xl:w-4/12 mb-12 xl:mb-0 px-4")
+            div(class="w-full xl:w-6/12 mb-12 xl:mb-0 px-4")
                 .relative.flex.flex-col.min-w-0.break-words.bg-white.w-full.mb-6.shadow-lg.rounded
                     .rounded-t.mb-0.px-4.py-3.border-0
                         .flex.flex-wrap.items-center
@@ -44,7 +44,9 @@ block content
                                 th.px-6.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
                                     | Date
                                 th.px-6.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
-                                    | 
+                                    | Score
+                                th.px-6.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
+                                    | En tête
                                 th.px-6.bg-gray-100.text-gray-600.align-middle.border.border-solid.border-gray-200.py-3.text-xs.uppercase.border-l-0.border-r-0.whitespace-no-wrap.font-semibold.text-left
                         tbody 
                             each run in runs   
@@ -60,6 +62,9 @@ block content
                                         while i>=run.score
                                             - i--
                                             i.far.fa-star
+                                    td.border-t-0.px-6.align-middle.border-l-0.border-r-0.text-xs.whitespace-no-wrap.p-4
+                                        if run.head
+                                            span OUI 
                                     td.border-t-0.px-6.align-middle.border-l-0.border-r-0.text-xs.whitespace-no-wrap.p-4.text-center
                                         - var action="topoRouteInstance.deleteRun('"+run.id+"')"
                                         button(class="bg-red-500 text-white active:bg-indigo-600 px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1",type="button",style="transition:all .15s ease",onclick=action)
